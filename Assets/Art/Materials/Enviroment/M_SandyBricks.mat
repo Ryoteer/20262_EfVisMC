@@ -60,7 +60,7 @@ Material:
     m_Floats:
     - _BaseSmoothIntensity: 0.25
     - _BlendSmoothIntensity: 0.125
-    - _MaskAmount: 0.413
+    - _MaskAmount: 0.428
     m_Colors:
     - _BaseTiling: {r: 4, g: 4, b: 0, a: 0}
     - _BlendTiling: {r: 5, g: 5, b: 0, a: 0}
