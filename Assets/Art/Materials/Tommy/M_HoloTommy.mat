@@ -43,14 +43,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Amplitude: 0
+    - _Amplitude: 1
     - _Frequency: 250
     - _Intensity: 2
-    - _Power: 0.5
+    - _Power: 0.25
     - _Speed: 2.5
     - _ZWrite: 1
     - _ZWriteControl: 1
     m_Colors:
-    - _AlphaRange: {r: 0.625, g: 0.75, b: 0, a: 0}
+    - _AlphaRange: {r: 0.625, g: 0.9, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
