@@ -39,16 +39,20 @@ Material:
     m_Ints: []
     m_Floats:
     - _AngleOffset: 0.25
+    - _CoastDepth: 0.5
+    - _CoastDistance: 1
     - _DistortionAmount: 0.125
-    - _DistortionAngleOffset: 0.5
+    - _DistortionAngleOffset: 1
     - _NormalStrength: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _CoastRange: {r: 0.125, g: 0.75, b: 0, a: 0}
     - _DistortionOffset: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _DistortionTiling: {r: 5, g: 5, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}
+    - _WaveRange: {r: 0, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8824734441579056547

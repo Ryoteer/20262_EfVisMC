@@ -39,9 +39,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _MaskAmount: 0.072
+    - _MaskAmount: 0
     m_Colors:
-    - _BaseTiling: {r: 4, g: 4, b: 0, a: 0}
-    - _BlendTiling: {r: 5, g: 5, b: 0, a: 0}
+    - _BaseTiling: {r: 15, g: 15, b: 0, a: 0}
+    - _BlendTiling: {r: 50, g: 50, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
