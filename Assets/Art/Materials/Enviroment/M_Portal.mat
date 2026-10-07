@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Water
-  m_Shader: {fileID: -6465566751694194690, guid: 24c8ff6d1f069a5459a52c50e0af784c, type: 3}
+  m_Name: M_Portal
+  m_Shader: {fileID: -6465566751694194690, guid: d88dac548b7ab714eb04d8b3425a2c54, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _DestinationTex:
+        m_Texture: {fileID: 2800000, guid: f330448ee31046a49a9c8e56b394b43b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,27 +42,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AngleOffset: 0.25
-    - _CoastDepth: 0.5
-    - _CoastDistance: 1
-    - _Depth: 1.25
-    - _Distance: 2.5
-    - _DistortionAmount: 0.125
-    - _DistortionAngleOffset: 1
-    - _NormalStrength: 0.5
+    - _Alpha: 1
+    - _AngleOffset: 0.5
+    - _Intensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Rotation: 45
+    - _Strength: 7.5
     m_Colors:
-    - _CoastRange: {r: 0.125, g: 0.75, b: 0, a: 0}
-    - _DepthRange: {r: 0.25, g: 0.5, b: 0, a: 0}
-    - _DistortionOffset: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - _DistortionTiling: {r: 10, g: 10, b: 0, a: 0}
+    - _BaseColor: {r: 0.2936988, g: 0.8105611, b: 0.8301887, a: 0}
+    - _BorderColor: {r: 0.9669811, g: 0.9952763, b: 1, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Tiling: {r: 2.5, g: 2.5, b: 0, a: 0}
-    - _WaveRange: {r: -0.25, g: 0.25, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8824734441579056547
+--- !u!114 &9072079215530384699
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
