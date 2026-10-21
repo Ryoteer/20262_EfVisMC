@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_GravelAndSand
+  m_Shader: {fileID: -6465566751694194690, guid: 8df3b335a694bea4fb9a2fbcf382aadd, type: 3}
+  m_Parent: {fileID: 2100000, guid: e5e8eba541692a848964ebaaf9364987, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseAO:
+        m_Texture: {fileID: 2800000, guid: a6a2970574f5e364aa453a5e5c204e11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColor:
+        m_Texture: {fileID: 2800000, guid: 8feb886447a2add4c8bbb672aef8e1b9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseHeight:
+        m_Texture: {fileID: 2800000, guid: 08613b391b42bab43b3898eab09f690b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseNormal:
+        m_Texture: {fileID: 2800000, guid: 78773c6359508de42a906d0a7a001a35, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseSmoothness:
+        m_Texture: {fileID: 2800000, guid: 08613b391b42bab43b3898eab09f690b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendAO:
+        m_Texture: {fileID: 2800000, guid: 4850602b046636b40ae010bf438d738b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendColor:
+        m_Texture: {fileID: 2800000, guid: c42babf5ce1eedf4f9b4ac8a2f8c64fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendHeight:
+        m_Texture: {fileID: 2800000, guid: 2a83c6d7393a7f443a05e2f2fb1b17eb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendNormal:
+        m_Texture: {fileID: 2800000, guid: 9d2186051a7e1d949b0b71f4f428e0f6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendSmoothness:
+        m_Texture: {fileID: 2800000, guid: 2a83c6d7393a7f443a05e2f2fb1b17eb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BaseAmplitude: 1
+    - _BlendAmplitude: 1
+    - _BlendSmoothIntensity: 0.1
+    - _MaskAmount: 0.625
+    m_Colors:
+    - _BaseTiling: {r: 25, g: 25, b: 0, a: 0}
+    - _BlendTiling: {r: 15, g: 15, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &5552456066874589786
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 10

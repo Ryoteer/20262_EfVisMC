@@ -201,13 +201,13 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -1693937597855083389}
   - {fileID: -7698709924708609805}
+  - {fileID: 200427250801961632}
+  - {fileID: -1693937597855083389}
   - {fileID: -1409080595426077851}
   - {fileID: 7167518994492850087}
   - {fileID: 4646763442582140683}
   - {fileID: -7881839448610896115}
-  - {fileID: 200427250801961632}
   - {fileID: 4875439195244605402}
 --- !u!114 &200427250801961632
 MonoBehaviour:
