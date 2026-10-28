@@ -54,8 +54,8 @@ Material:
     - _GroundBlendPower: 1.25
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SkyBlendPower: 0.19
-    - _StarsAmount: 1.5
+    - _SkyBlendPower: 1
+    - _StarsAmount: 1.125
     m_Colors:
     - _GroundColor: {r: 0.8773585, g: 0.3609886, b: 0.120016, a: 1}
     - _HorizonColor: {r: 0.509434, g: 0, b: 0.3637957, a: 1}
