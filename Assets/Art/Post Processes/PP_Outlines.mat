@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Fix: 0.025
-    - _Width: 0.075
+    - _Width: 0.025
     m_Colors:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

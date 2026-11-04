@@ -1,33 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 
-public class PortalBehaviour : MonoBehaviour
+public class PortalBehaviour : MonoBehaviour, IInteract
 {
-    #region Input System
-    private InputSystem_Actions _inputs;
-
-    private void Awake()
-    {
-        _inputs = new InputSystem_Actions();
-    }
-
-    private void OnEnable()
-    {
-        _inputs.Enable();
-
-        _inputs.Player.Interact.performed += Interact;
-    }
-
-    private void OnDisable()
-    {
-        _inputs.Disable();
-
-        _inputs.Player.Interact.performed -= Interact;
-    }
-    #endregion
-
     [Header("<color=cyan>Gameplay</color>")]
     [Range(0.0f, 10.0f)][SerializeField] private float _stateInterval = 2.0f;
 
@@ -46,6 +23,7 @@ public class PortalBehaviour : MonoBehaviour
 
     private Material _material;
     private Renderer _renderer;
+    private VisualEffect _vfx;
 
     private bool _isActive = false;
     private int _index = 0;
@@ -54,15 +32,19 @@ public class PortalBehaviour : MonoBehaviour
     {
         _renderer = GetComponentInChildren<Renderer>();
         _material = _renderer.material;
+        _vfx = GetComponentInChildren<VisualEffect>();
 
         _destinationTexs[0] = _material.GetTexture(_destinationTexName);
         _baseColors[0] = _material.GetColor(_baseColorName);
         _borderColors[0] = _material.GetColor(_borderColorName);
         _tilings[0] = _material.GetVector(_tilingVectorName);
         _strengths[0] = _material.GetFloat(_strengthFloatName);
+
+        _vfx.SetVector4("Color", _borderColors[0]);
+        _vfx.SendEvent("OnPortalEnable");
     }
 
-    private void Interact(InputAction.CallbackContext value)
+    public void Interact()
     {
         if((_destinationTexs.Length == _baseColors.Length && _destinationTexs.Length == _borderColors.Length) && !_isActive)
         {
@@ -73,6 +55,8 @@ public class PortalBehaviour : MonoBehaviour
     private IEnumerator ChangeDestination()
     {
         _isActive = true;
+
+        _vfx.SendEvent("OnPortalDisable");
 
         float t = 0.0f;
 
@@ -99,6 +83,7 @@ public class PortalBehaviour : MonoBehaviour
         _material.SetColor(_borderColorName, _borderColors[_index]);
         _material.SetVector(_tilingVectorName, _tilings[_index]);
         _material.SetFloat(_strengthFloatName, _strengths[_index]);
+        _vfx.SetVector4("Color", _borderColors[_index]);
 
         t = 0.0f;
 
@@ -110,6 +95,8 @@ public class PortalBehaviour : MonoBehaviour
 
             yield return null;
         }
+
+        _vfx.SendEvent("OnPortalEnable");
 
         _isActive = false;
     }

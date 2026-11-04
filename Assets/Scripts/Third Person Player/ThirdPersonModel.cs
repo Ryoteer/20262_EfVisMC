@@ -18,6 +18,8 @@ public class ThirdPersonModel : MonoBehaviour
     [Header("<color=red>Physics</color>")]
     [Range(0.125f, 0.75f)] [SerializeField] private float _groundRayLength = 0.25f;
     [SerializeField] private LayerMask _groundLayer;
+    [Range(0.125f, 0.75f)] [SerializeField] private float _interactRayLength = 2.0f;
+    [SerializeField] private LayerMask _interactLayer;
     [SerializeField] private float _jumpForce = 8.75f;
     [SerializeField] private float _moveSpeed = 5.0f;
     [Range(1.0f, 5.0f)][SerializeField] private float _sprintModifier = 1.375f;
@@ -26,12 +28,13 @@ public class ThirdPersonModel : MonoBehaviour
     public bool IsSprinting { get { return _isSprinting; } set { _isSprinting = value; } }
     private float _actualSprintModifier = 1.0f;
 
-    private Ray _groundRay;
+    private Ray _groundRay, _interactRay;
+    private RaycastHit _interactRayHit;
 
     private Vector2 _rawInput = new(), _smoothedInput = new(), _smoothedVelocity = new();
     public Vector2 RawInput { get { return _rawInput; } set { _rawInput = value; } }
 
-    private Vector3 _groundOffsetPos = new(), _moveDir = new(), _dirFix = new(), _cameraForwardFix = new(), _cameraRightFix = new();
+    private Vector3 _groundOffsetPos = new(), _interactOffsetPos = new(), _moveDir = new(), _dirFix = new(), _cameraForwardFix = new(), _cameraRightFix = new();
     public Vector3 MoveDir { get { return _moveDir; } }
     
     private Rigidbody _rb;
@@ -83,6 +86,21 @@ public class ThirdPersonModel : MonoBehaviour
         if (_rawInput.x != 0.0f ||  _rawInput.y != 0.0f)
         {
             Movement(_smoothedInput);
+        }
+    }
+
+    public void Interact()
+    {
+        _interactOffsetPos = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
+
+        _interactRay = new Ray(_interactOffsetPos, transform.forward);
+
+        if(Physics.Raycast(_interactRay, out _interactRayHit, _interactRayLength, _interactLayer))
+        {
+            if(_interactRayHit.collider.TryGetComponent(out IInteract interactable))
+            {
+                interactable.Interact();
+            }
         }
     }
 

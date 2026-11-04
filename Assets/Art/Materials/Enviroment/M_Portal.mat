@@ -44,7 +44,7 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _AngleOffset: 0.5
-    - _Intensity: 1
+    - _Intensity: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rotation: 45
