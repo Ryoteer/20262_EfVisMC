@@ -44,12 +44,13 @@ Material:
     - _GroundAlphaValue: 1
     - _GroundBlendPower: 1
     - _HorizonAlphaValue: 1
-    - _MaxDistance: 250
+    - _MaxDistance: 50
     - _MaxOpacity: 1
     - _MinDistance: 25
-    - _MinOpacity: 0.75
-    - _SkyAlphaValue: 0
+    - _MinOpacity: 0.9
+    - _SkyAlphaValue: 1
     - _SkyBlendPower: 1
+    - _UsesSkyBoxMask: 0
     m_Colors:
     - _BaseColor: {r: 0.8066038, g: 0.8066038, b: 0.8066038, a: 0}
     - _BlendColor: {r: 0.62264144, g: 0.62264144, b: 0.62264144, a: 0}

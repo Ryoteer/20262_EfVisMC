@@ -26,6 +26,7 @@ public class PortalBehaviour : MonoBehaviour, IInteract
     private VisualEffect _vfx;
 
     private bool _isActive = false;
+    private float _ogRadius = 0.0f, _ogSpawnRateValue = 0.0f;
     private int _index = 0;
 
     private void Start()
@@ -42,6 +43,9 @@ public class PortalBehaviour : MonoBehaviour, IInteract
 
         _vfx.SetVector4("Color", _borderColors[0]);
         _vfx.SendEvent("OnPortalEnable");
+
+        _ogRadius = _vfx.GetFloat("CircleRadius");
+        _ogSpawnRateValue = _vfx.GetFloat("SpawnRate");
     }
 
     public void Interact()
@@ -54,9 +58,7 @@ public class PortalBehaviour : MonoBehaviour, IInteract
 
     private IEnumerator ChangeDestination()
     {
-        _isActive = true;
-
-        _vfx.SendEvent("OnPortalDisable");
+        _isActive = true;        
 
         float t = 0.0f;
 
@@ -65,11 +67,15 @@ public class PortalBehaviour : MonoBehaviour, IInteract
             t += Time.deltaTime / _stateInterval;
 
             _material.SetFloat(_alphaFloatName, Mathf.Lerp(1.0f, 0.0f, t));
+            _vfx.SetFloat("CircleRadius", Mathf.Lerp(_ogRadius, 0.0f, t));
+            _vfx.SetFloat("SpawnRate", Mathf.Lerp(_ogSpawnRateValue, 0, t));
 
             yield return null;
         }
 
-        if(_index >= _destinationTexs.Length - 1)
+        _vfx.SendEvent("OnPortalDisable");
+
+        if (_index >= _destinationTexs.Length - 1)
         {
             _index = 0;
         }
@@ -85,6 +91,8 @@ public class PortalBehaviour : MonoBehaviour, IInteract
         _material.SetFloat(_strengthFloatName, _strengths[_index]);
         _vfx.SetVector4("Color", _borderColors[_index]);
 
+        _vfx.SendEvent("OnPortalEnable");
+
         t = 0.0f;
 
         while (t < 1.0f)
@@ -92,11 +100,11 @@ public class PortalBehaviour : MonoBehaviour, IInteract
             t += Time.deltaTime / _stateInterval;
 
             _material.SetFloat(_alphaFloatName, Mathf.Lerp(0.0f, 1.0f, t));
+            _vfx.SetFloat("CircleRadius", Mathf.Lerp(0.0f, _ogRadius, t));
+            _vfx.SetFloat("SpawnRate", Mathf.Lerp(0, _ogSpawnRateValue, t));
 
             yield return null;
-        }
-
-        _vfx.SendEvent("OnPortalEnable");
+        }        
 
         _isActive = false;
     }
